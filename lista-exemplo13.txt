@@ -1,0 +1,132 @@
+//13 - faça um programa em C, que lê 5 números inteiros e imprime a soma dos pares
+//exemplo muito rudimentar
+#include <stdio.h>
+
+int main(){
+    int n1, n2, n3, n4, n5, soma=0;
+    
+    printf("Digite 5 números: ");
+    scanf("%d %d %d %d %d", &n1, &n2, &n3, &n4, &n5);
+    
+    if(n1%2 == 0)
+        soma = soma + n1;
+        
+    if(n2%2 == 0)
+        soma = soma + n2;
+        
+    if(n3%2 == 0)
+        soma = soma + n3;
+    
+    if(n4%2 == 0)
+        soma = soma + n4;
+        
+    if(n5%2 == 0)
+        soma = soma + n5;
+    
+    printf("Soma = %d", soma);
+    return 0;
+}
+
+//usando for
+#include <stdio.h>
+
+int main(){
+    int i=0, n=0, soma=0;
+    for(i=1; i<=5; i++){
+        printf("Digite o número %d: ", i);
+        scanf("%d", &n);
+        
+        if(n%2 == 0)
+            soma = soma + n;
+    }
+    
+    printf("Soma = %d", soma);
+    return 0;
+}
+
+//solução com vetor e for
+#include <stdio.h>
+
+int main(){
+    int i=0, v[100], soma=0;
+    
+    for(; i<5; i++){
+        printf("Digite o número %d: ", i+1);
+        scanf("%d", &v[i]);
+        
+        if(v[i]%2 == 0)
+            soma = soma + v[i];
+    }
+    
+    printf("Soma = %d", soma);
+    
+    return 0;
+}
+
+
+//outros exemplos com vetor
+#include <stdio.h>
+
+int main(){
+    int tam = 0;
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &tam);
+    int i=0, v[tam];
+    
+    for(i=0; i<tam; i++)
+        printf("Vetor na %dª posição = %d\n", i+1, v[i]);
+    
+    return 0;
+}
+
+
+
+//vetor invertido
+#include <stdio.h>
+
+int main(){
+    int tam = 0;
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &tam);
+    int i=0, v[tam];
+    
+    for(i=0; i<tam; i++)
+        v[i]=i*2;
+    
+    printf("Vetor Original:\n");
+    for(i=0; i<tam; i++){
+        printf("%d ", v[i]);
+    }
+    
+    printf("\nVetor Invertido:\n");
+    for(i=tam-1; i>=0; i--){
+        printf("%d ", v[i]);
+    }
+    
+    return 0;
+}
+
+//matriz
+#include <stdio.h>
+
+int main(){
+    int tam = 0;
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &tam);
+    int i=0, j=0, mat[tam][tam];
+    
+    for(i=0; i<tam; i++){
+        for(j=0; j<tam; j++){
+            mat[i][j] = i*j;
+        }
+    }
+    printf("-------\n");
+    for(i=0; i<tam; i++){
+        for(j=0; j<tam; j++){
+            printf("|%d", mat[i][j]);
+        }
+        printf("|\n");
+    }
+    printf("-------");
+    return 0;
+}
